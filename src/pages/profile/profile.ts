@@ -28,16 +28,15 @@ export class ProfilePage {
         .subscribe(response => {
           this.cliente = response;
           this.getImageIfExists();
-          // buscar imagem
         },
         error => {
-          if (error.status == 403)  {
-              this.navCtrl.setRoot('HomePage');
+          if (error.status == 403) {
+            this.navCtrl.setRoot('HomePage');
           }
         });
     }
     else {
-      this.navCtrl.setRoot('HomePage');  
+      this.navCtrl.setRoot('HomePage');
     }
   }
 
