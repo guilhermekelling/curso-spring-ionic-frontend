@@ -37,7 +37,7 @@ export class CartService {
         let cart = this.getCart();
         let position = cart.items.findIndex(x => x.produto.id == produto.id);
         if (position != -1) {
-            cart.items.splice(position,1);
+            cart.items.splice(position, 1);
         }
         this.storage.setCart(cart);
         return cart;
@@ -58,7 +58,7 @@ export class CartService {
         let position = cart.items.findIndex(x => x.produto.id == produto.id);
         if (position != -1) {
             cart.items[position].quantidade--;
-            if(cart.items[position].quantidade < 1) {
+            if (cart.items[position].quantidade < 1) {
                 cart = this.removeProduto(produto);
             }
         }
