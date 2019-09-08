@@ -4,23 +4,23 @@ import { LocalUser } from "../models/local_user";
 import { Cart } from "../models/cart";
 
 @Injectable()
-export class StorageService{
+export class StorageService {
 
-    getLocalUser() : LocalUser{
+    getLocalUser() : LocalUser {
         let usr = localStorage.getItem(STORAGE_KEYS.localUser);
         if (usr == null) {
             return null;
         }
         else {
-            return JSON.parse(usr)
+            return JSON.parse(usr);
         }
     }
 
-    setLocalUser(obj : LocalUser){
-        if (obj == null){
+    setLocalUser(obj : LocalUser) {
+        if (obj == null) {
             localStorage.removeItem(STORAGE_KEYS.localUser);
         }
-        else{
+        else {
             localStorage.setItem(STORAGE_KEYS.localUser, JSON.stringify(obj));
         }
     }

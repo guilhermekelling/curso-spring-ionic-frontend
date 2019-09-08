@@ -6,10 +6,10 @@ import { PedidoDTO } from "../../models/pedido.dto";
 @Injectable()
 export class PedidoService {
 
-     constructor(public http: HttpClient) {
+    constructor(public http: HttpClient) {
     }
 
-     insert(obj: PedidoDTO) {
+    insert(obj: PedidoDTO) {
         return this.http.post(
             `${API_CONFIG.baseUrl}/pedidos`,
             obj,
